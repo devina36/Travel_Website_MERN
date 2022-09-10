@@ -1,9 +1,14 @@
+import React from 'react';
 import 'assets/scss/style.scss';
+import HomePage from 'pages/HomePage';
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-       <h1>ok</h1>
+      <Router>
+        <Route path='/' component={HomePage}></Route>
+      </Router>
     </div>
   );
 }
