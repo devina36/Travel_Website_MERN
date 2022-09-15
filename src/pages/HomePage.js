@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 import homePage from 'json/landingPage.json';
 import MostPicked from 'parts/MostPicked';
 import Categories from 'parts/Categories';
+import Testimonial from 'parts/Testimonial';
 
 export default class HomePage extends Component {
   constructor(props){
@@ -24,6 +25,7 @@ export default class HomePage extends Component {
         data={homePage.mostPicked}
         />
         <Categories data={homePage.categories}/>
+        <Testimonial data={homePage.testimonial}/>
       </>
     )
   }

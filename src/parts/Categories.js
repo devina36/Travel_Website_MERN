@@ -5,9 +5,9 @@ import Button from 'elements/Button'
 export default function Categories(props) {
   return (
     <>
-        {props.data.map((items, index) => {
+        {props.data.map((items, indexs) => {
             return (
-            <section key={`categories-${index}`} className='container'>
+            <section key={`categories-${indexs}`} className='container'>
                 <h4 className='mb-3'>
                     {items.name}
                 </h4>
@@ -15,7 +15,7 @@ export default function Categories(props) {
                     {items.items.map((item, index)=>{
                         return (
                              <div key={`category-${index}`} className="item column-3 row-1">
-                                <div className="card border-none">
+                                <div className="card">
                                     {item.isPopular === true ? 
                                     <div className="tag text-white">
                                         Populer
@@ -23,17 +23,19 @@ export default function Categories(props) {
                                         &thinsp; Choice
                                         </span>
                                     </div> : ''}
-                                    <figure className="img-wrapper">
+                                    <figure className="img-wrapper" style={{ height: 180 }}>
                                         <img src={item.imageUrl} 
                                         alt={item.name} 
                                         className="img-cover" />
                                     </figure>
-                                    <Button type='Link'>
-                                        <h5>{item.name}</h5>
-                                    </Button>
-                                    <span>
-                                        {item.city}, {item.country}
-                                    </span>
+                                    <div className="meta-wrapper">
+                                        <Button href={`/properties/${item._id}`} type='Link' className='streched-link d-block text-gray-900'>
+                                            <h5 className='h4'>{item.name}</h5>
+                                        </Button>
+                                        <span className='text-gray-500'>
+                                            {item.city}, {item.country}
+                                        </span>
+                                    </div>
                                 </div>
                              </div>
                             );
