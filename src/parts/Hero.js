@@ -12,7 +12,7 @@ import formatNumber from 'utils/FormatNumber'
 export default function Hero(props) {
   function showMostPicked(){
     window.scrollTo({
-      top: props.refMostPicked.current.offsetTop - 30,
+      top: props.refMostPicked.current.offsetTop - 105,
       behavior: "smooth"
     });
   }
