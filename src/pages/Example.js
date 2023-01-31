@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import InputButton from 'elements/Form/InputNumber';
+import { InputNumber, InputDate } from '../elements/Form';
 
 class Example extends Component {
   state = {
-    value: '1',
+    value: {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection',
+    },
   };
 
   handleChange = (e) => {
@@ -15,14 +19,15 @@ class Example extends Component {
       <div className="conatiner">
         <div className="row align-items-center justify-content-center" style={{ height: '100vh' }}>
           <div className="col-auto">
-            <InputButton
+            {/* <InputNumber
               max={30}
               name="value"
               isSuffixPlural
               value={this.state.value}
               onChange={this.handleChange}
               suffix=" night"
-            />
+            /> */}
+            <InputDate max={30} onChange={this.handleChange} name="value" value={this.state.value} />
           </div>
         </div>
       </div>
