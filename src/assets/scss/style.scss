@@ -101,6 +101,10 @@ section {
   height: 100%;
   border-radius: 15px;
 
+  &.bordered {
+    border: 1px solid $gray-200;
+  }
+
   .tag {
     font-weight: 500;
     position: absolute;

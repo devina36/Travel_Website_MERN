@@ -7,6 +7,17 @@ export default function Header(props) {
     return props.location.pathname === path ? ' active' : '';
   };
 
+  if (props.isCentered)
+    return (
+      <header className="spacing-sm">
+        <div className="container">
+          <nav className="navbar navbar-expand-lg justify-content-center navbar-light">
+            <BrandIcon />
+          </nav>
+        </div>
+      </header>
+    );
+
   return (
     <header className="spacing-sm">
       <div className="container">

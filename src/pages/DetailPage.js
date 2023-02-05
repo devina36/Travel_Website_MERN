@@ -1,8 +1,11 @@
 import BookingForm from 'parts/BookingForm';
+import Categories from 'parts/Categories';
 import FeaturedImage from 'parts/FeaturedImage';
+import Footer from 'parts/Footer';
 import Header from 'parts/Header';
 import PageDetailDescription from 'parts/PageDetailDescription';
 import PageDetailTitle from 'parts/PageDetailTitle';
+import Testimonial from 'parts/Testimonial';
 import React, { Component } from 'react';
 
 import ItemDetails from '../json/itemDetails.json';
@@ -37,6 +40,9 @@ export default class DetailPage extends Component {
             </div>
           </div>
         </section>
+        <Categories data={ItemDetails.categories} />
+        <Testimonial data={ItemDetails.testimonial} />
+        <Footer />
       </>
     );
   }
